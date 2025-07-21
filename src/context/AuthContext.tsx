@@ -7,6 +7,7 @@ interface AuthContextType {
   logout: () => void;
 }
 
+
 const AuthContext = createContext<AuthContextType>({
   loggedIn: false,
   isHydrated: false,

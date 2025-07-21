@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/router';
+import Spinner from '../Spinner';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -13,7 +14,8 @@ export default function Login() {
     e.preventDefault();
     if (email === 'admin@mail.com' && password === 'admin') {
       login(); // Updates loggedIn state and localStorage
-      router.push('/frame1');
+      <Spinner />;
+      router.push('/');
     } else {
       setError('Invalid credentials');
     }

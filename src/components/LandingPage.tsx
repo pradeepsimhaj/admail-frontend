@@ -1,7 +1,7 @@
 
 import Navbar from "./Navbar";
 
-export default function Frame1() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen p-6">
       <Navbar />

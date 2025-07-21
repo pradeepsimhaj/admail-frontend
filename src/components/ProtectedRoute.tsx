@@ -14,6 +14,7 @@
 // }
 
 
+
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/router';
 import { useEffect, ReactNode } from 'react';
@@ -22,8 +23,8 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { loggedIn, isHydrated } = useAuth();
   const router = useRouter();
 
-  const publicRoutes = ['/login', '/signup', '/frame1'];
-  const protectedRoutes = ['/frame1', '/frame2', '/frame3', '/frame4'];
+  const publicRoutes = ['/login', '/signup', '/landingpage'];
+  const protectedRoutes = ['/dashboard', '/upload', '/domain', '/campaign'];
 
   useEffect(() => {
     if (!isHydrated) {
@@ -35,7 +36,7 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
     if (loggedIn) {
       if (router.pathname === '/login' || router.pathname === '/signup' || !protectedRoutes.includes(router.pathname)) {
         console.log('ProtectedRoute: Logged in, redirecting to /frame1 from', router.pathname);
-        router.push('/frame1');
+        router.push('/');
       }
     } else {
       if (!publicRoutes.includes(router.pathname)) {

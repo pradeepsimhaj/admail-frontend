@@ -1,7 +1,7 @@
-import Navbar from "./Frame4Navbar";
+import Navbar from "./CampaignNavbar";
 import { useState } from "react";
 
-export default function Frame4() {
+export default function Campaign() {
   const [format, setFormat] = useState<"Email" | "HTML">("Email");
 
   const handleFormatChange = (newFormat: "Email" | "HTML") => {
